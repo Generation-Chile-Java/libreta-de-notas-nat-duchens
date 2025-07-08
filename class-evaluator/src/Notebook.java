@@ -10,23 +10,35 @@ public class Notebook {
 
         Map<String, ArrayList<Integer>> gradeBook = new HashMap<>();
 
-        System.out.println("Enter the total number of students: ");
+        System.out.println("Notebook: Student grades should only be 0 to 7");
+        System.out.println("------------------------------\n");
+
+        System.out.print("Enter the total number of students: ");
         int studentCount = Integer.parseInt(keyBoard.nextLine());
 
-        System.out.println("Enter the total number of grades per student: ");
+        System.out.print("Enter the total number of grades per student: ");
         int gradeCount = Integer.parseInt(keyBoard.nextLine());
 
         //To input students names and grades
 
         for (int s = 0; s < studentCount; s++) {
-            System.out.println("Enter student name: ");
+            System.out.print("Enter student name: ");
             String studentName = keyBoard.nextLine();
             ArrayList<Integer> grades = new ArrayList<>();
 
             for (int g = 1; g <= gradeCount; g++) {
-                System.out.print("Enter grade #" + g + ": ");
-                int grade = Integer.parseInt(keyBoard.nextLine());
-                grades.add(grade);
+                int grade;
+                while (true) {
+                    System.out.print("Enter grade #" + g + ": ");
+                    grade = Integer.parseInt(keyBoard.nextLine());
+                    if (grade >= 0 && grade <= 7) {
+                        System.out.println("Valid grade!\n");
+                        grades.add(grade);
+                        break; //Necessary exit, I had created an infinite loop
+                    } else {
+                        System.out.println("Invalid grade!, please enter a valid grade between 0 to 7.\n");
+                    }
+                }
             }
 
             gradeBook.put(studentName, grades);
