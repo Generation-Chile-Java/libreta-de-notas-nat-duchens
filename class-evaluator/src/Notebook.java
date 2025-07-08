@@ -1,4 +1,9 @@
-import java.util.*;
+//import java.util.*; Uses to many resources
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Collections;
 
 public class Notebook {
 
