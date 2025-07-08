@@ -84,7 +84,7 @@ public class Notebook {
                         double avg = studentAverage(grades);
                         int max = Collections.max(grades);
                         int min = Collections.min(grades);
-                        System.out.println(name + " Average grade: " + avg +
+                        System.out.println(name + " → Average grades: " + avg +
                                 ", Max: " + max + ", Min: " + min);
                     }
                     System.out.println("------------------------------");
